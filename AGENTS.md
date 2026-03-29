@@ -37,8 +37,9 @@ Important: If we're iterating quickly on a task/feature and revert back or refac
 
 ## References & Demos
 
- Neither of these folders are to be released on GitHub.
+Neither of these folders are to be released on GitHub.
 
-- `./references/` to host reference codebases to learn from.
+- `./.references/` to host reference codebases to learn from.
 - `./.demos/` to host demos of the tools we're building and iterate on the DX.
 - `./.videos/` to create launch/update remotion videos for the tools we're building.
+- `./.screenshots/` for temporary screenshots by `agent-browser`.
