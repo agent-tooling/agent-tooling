@@ -30,8 +30,9 @@ Important: If we're iterating quickly on a task/feature and revert back or refac
 - GitHub: Use the GitHub CLI (`gh`) for all GitHub-related tasks like creating PRs, reviewing PRs, etc.
 - git: Use `git` for all git-related tasks like committing, pushing, pulling, etc.
 - `npm`: Use `npm` for publishing packages to npm and bumping package versions.
-- `bun`: Use `bun` as the package manager (not npm) for all TypeScript projects.
-- `vitest`: Use `vitest` for testing - not bun test.
+- `pnpm`: Use `pnpm` as the package manager for all TypeScript projects.
+- `node`: Use `node` (>=22) as the runtime for all TypeScript/JavaScript projects. Use `tsx` to run TypeScript directly in development.
+- `vitest`: Use `vitest` for testing.
 - `agent-browser`: `agent-browser` is installed globally and must be used for browser interactions. Store screenshots in `./screenshots/<project-name>/`
 - Use termshot to generate terminal screenshots
 
