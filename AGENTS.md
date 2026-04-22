@@ -2,6 +2,21 @@
 
 Agent Tooling (github.com/agent-tooling) is a GitHub organization revolving around AI and developer tools.
 
+## Local Mirror Layout
+
+The workspace root is the **org mirror folder**. Each cloned org repo is a direct child of it. The meta-repo (`agent-tooling/agent-tooling`) lives at the nested path `./agent-tooling/` and holds the source-of-truth `AGENTS.md` + `.agents/` that are mirrored to the root.
+
+```
+./                        <- org mirror folder (this workspace root)
+├── AGENTS.md             <- working copy (this file), synced with the meta-repo
+├── .agents/              <- working copy, synced with the meta-repo
+├── agent-tooling/        <- clone of github.com/agent-tooling/agent-tooling (meta-repo)
+├── message-layer/        <- clone of github.com/agent-tooling/message-layer
+└── <other-repo>/         <- other org repos as siblings
+```
+
+Critical: sibling org repos go at `./<repo-name>/` — **never** inside `./agent-tooling/<repo-name>/`. See the `agent-tooling` skill for the full sync workflow ("update to latest", "save local changes", "pull <repo>", "fetch latest").
+
 ## Dev Workflow
 
 For every task, do the following:
@@ -18,6 +33,11 @@ Important: If the changes aren't trivial or required several conversations back 
 ## Best Practices
 
 - all files names in kebab-case
+- every repo in the org ships a `.gitignore` that excludes `.env` / `.env.*`
+  (other than `.env.example`) so secrets never land in version control.
+  The meta-repo's top-level `.gitignore` is the canonical template; sibling
+  repos may extend it with project-specific rules but must not weaken the
+  secret exclusion.
 
 ## Way of Working
 
